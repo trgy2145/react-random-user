@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.App {
+    background: #a1ffce;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+button {
+    margin: 20px auto;
+    color: black;
+    background: #f4c4f3;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #3333;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+}
+
+.app__user {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__icons {
+
+
+
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__icons .fas {
+    color: #4ca1af;
+    margin: 0 30px;
+    transition: all 0.2s ease;
+
+}
+
+.app__icons .fas:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
