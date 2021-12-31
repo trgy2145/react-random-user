@@ -2,6 +2,7 @@ import './App.css'
 import Button from './components/Button'
 import { useState, Fragment } from 'react'
 import axios from 'axios'
+import Generator from './components/Generator'
 function App() {
   const [userData, setUserData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -13,7 +14,7 @@ function App() {
     axios
       .get('https://randomuser.me/api/')
       .then((response) => {
-        console.log(response.data.results)
+        console.log(response)
         setUserData(response.data.results)
       })
       .catch((error) => {
@@ -33,18 +34,7 @@ function App() {
     'fas fa-phone fa-4x',
     'fas fa-lock fa-4x'
   ]
-  const PhraseGenerator = ({ user }) => {
-    const phrases = [
-      `Hi my name is ${user.name.first} ${user.name.last}`,
-      `my e mail address is ${user.email}`,
-      `ı was born on ${user.dob.date.slice(0, 10)} `,
-      `Hi country is ${user.location.country} `,
-      `my phene number is ${user.phone}`,
-      `my password is ${user.login.password} `
-    ]
-
-    return <h1>{phrases[activeLink]} </h1>
-  }
+ 
   const activeLinkHandler = (index) => {
     setActiveLink(index)
   }
@@ -60,11 +50,11 @@ function App() {
         <h1>Loading...</h1>
       ) : (
         <div className="app__user">
-          {userData.map((user, index) => {
+          {userData.map((user) => {
             return (
               <Fragment key={user.cell}>
                 <img src={user.picture.large} alt="#" />
-                <PhraseGenerator user={user} />
+                <Generator user={user} activeLink={activeLink}/>
                 <div className="app__icons">
                   {icons.map((icon, index) => {
                     return (
